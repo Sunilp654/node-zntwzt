@@ -8,7 +8,14 @@
   width: 100%;
   object-fit: contain;
 }
-
+.itemQuntity {
+  background: #dfdfdf;
+  margin-left: 5px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
 @media (max-width: 768px) {
   .slider img {
     height: 220px;
