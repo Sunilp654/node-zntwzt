@@ -38,6 +38,7 @@
   color: #fff;
   text-decoration: none;
 }
+
 @media (max-width: 768px) {
   .slider img {
     height: 220px;

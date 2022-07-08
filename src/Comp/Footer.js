@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 function Footer() {
   return (
@@ -25,9 +25,19 @@ function Footer() {
                 <a href="#">Terms & Condition</a>
               </li>
               <li>
-                <a href="#">Terms & Condition</a>
+                <a href="#">Career</a>
               </li>
             </ul>
+          </Col>
+          <Col md="4">
+            <h6>Contact US</h6>
+            <div className="d-flex flex-column">
+              <input type="text" placeholder="Email*" className="mb-2" />
+              <textarea placeholder="Message*" className="mb-2"></textarea>
+              <Button className="btn" className="mb-2">
+                Submit
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>
