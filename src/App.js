@@ -1,8 +1,9 @@
-import Nav from './Comp/Nav';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navigation from './Comp/Navigation';
 function App() {
   return (
     <div className="App">
-      <Nav />
+      <Navigation />
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
