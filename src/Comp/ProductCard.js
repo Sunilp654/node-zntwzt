@@ -6,8 +6,8 @@ function ProductCard() {
   return (
     <Container className="mt-3 card-section">
       <Row>
-        <Col md={4}>
-          <Card style={{ width: '18rem' }}>
+        <Col md={4} className="mb-2">
+          <Card style={{ width: '100%' }}>
             <Card.Img
               variant="top"
               src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/09/product-photography-types-water-bottle.jpg"
