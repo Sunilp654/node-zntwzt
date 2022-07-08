@@ -3,6 +3,12 @@
   object-fit: cover;
 }
 
+.card-section img {
+  height: 150px;
+  width: 100%;
+  object-fit: contain;
+}
+
 @media (max-width: 768px) {
   .slider img {
     height: 220px;
