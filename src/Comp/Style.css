@@ -1,0 +1,11 @@
+.slider img {
+  height: 320px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .slider img {
+    height: 220px;
+    object-fit: cover;
+  }
+}
