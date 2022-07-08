@@ -18,9 +18,13 @@ function ProductCard() {
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
               </Card.Text>
-              <Row>
-                <Button variant="primary">Add To Cart</Button>
-                <Button variant="dark">Add To WishList</Button>
+              <Row className="d-flex flex-row">
+                <Col md={6} xs={6}>
+                  <Button variant="primary">Add To Cart</Button>
+                </Col>
+                <Col md={6} xs={6}>
+                  <Button variant="dark">Add To WishList</Button>
+                </Col>
               </Row>
             </Card.Body>
           </Card>
