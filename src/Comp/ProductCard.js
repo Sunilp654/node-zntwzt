@@ -5,6 +5,9 @@ import { Card } from 'react-bootstrap';
 function ProductCard() {
   return (
     <Container className="mt-3 card-section">
+      <h3 className="text-center my-5">
+        <span className="top-heading">TOP SELL PRODUCT</span>
+      </h3>
       <Row>
         <Col md={4} className="mb-2">
           <Card style={{ width: '100%' }}>

@@ -38,6 +38,12 @@
   color: #fff;
   text-decoration: none;
 }
+h3 span.top-heading {
+  border: 1px solid #ddd;
+  padding: 5px 30px;
+  border-radius: 50px;
+  font-size: 24px;
+}
 
 @media (max-width: 768px) {
   .slider img {
