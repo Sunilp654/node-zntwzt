@@ -1,15 +1,20 @@
 import { Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
 import { useState } from 'react';
+import Login from './Login';
 
 function LoginResiter() {
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
   return (
     <>
-      <a variant="primary" onClick={handleShow}>
+      <a
+        variant="primary"
+        onClick={handleShow}
+        style={{ cursor: 'pointer', marginRight: '8px' }}
+      >
         Login & Register
       </a>
       <Modal
@@ -19,14 +24,15 @@ function LoginResiter() {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Login & Register</Modal.Title>
         </Modal.Header>
-        <Modal.Body>dsfsd</Modal.Body>
+        <Modal.Body>
+          <Login />
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary">Understood</Button>
         </Modal.Footer>
       </Modal>
     </>
