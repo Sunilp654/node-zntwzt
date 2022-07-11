@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavLayout from './Comp/NavLayout';
-import Bodypart from './Bodypart.js';
+import Bodypart from './Bodypart';
 // import { NavDropdown } from 'react-bootstrap';
 
 function Navigation() {
