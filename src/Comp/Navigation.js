@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavLayout from '../Comp/NavLayout';
+import NavLayout from './Comp/NavLayout';
 import Bodypart from './Bodypart.js';
 // import { NavDropdown } from 'react-bootstrap';
 
