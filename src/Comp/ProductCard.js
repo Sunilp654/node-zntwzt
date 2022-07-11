@@ -6,7 +6,7 @@ function ProductCard() {
   return (
     <Container className="mt-3 card-section">
       <h3 className="text-center my-5">
-        <span className="top-heading">All PRODUCT</span>
+        <span className="top-heading">All PRODUCTS</span>
       </h3>
       <Row>
         <Col md={4} className="mb-2">

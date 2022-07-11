@@ -2,6 +2,8 @@ import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import LoginResiter from './LoginResiter';
+
 // import { NavDropdown } from 'react-bootstrap';
 
 function NavLayout() {
@@ -26,9 +28,7 @@ function NavLayout() {
             <Nav.Link href="#Women">Women's clothing</Nav.Link>
           </Nav>
           <Navbar.Text>
-            <a href="#login" style={{ marginRight: '5px' }}>
-              Login & Register
-            </a>
+            <LoginResiter />
           </Navbar.Text>
           {/* <NavDropdown
             title="User Name"
