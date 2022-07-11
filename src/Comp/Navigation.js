@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
-import { NavDropdown } from 'react-bootstrap';
+// import { NavDropdown } from 'react-bootstrap';
 
 function Navigation() {
   return (
@@ -18,7 +18,12 @@ function Navigation() {
             <Nav.Link href="#Men">Men's clothing</Nav.Link>
             <Nav.Link href="#Women">Women's clothing</Nav.Link>
           </Nav>
-          <NavDropdown
+          <Navbar.Text>
+            <a href="#login" style={{ marginRight: '5px' }}>
+              Login & Register
+            </a>
+          </Navbar.Text>
+          {/* <NavDropdown
             title="User Name"
             id="basic-nav-dropdown"
             class="float-right"
@@ -32,7 +37,7 @@ function Navigation() {
             </NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-          </NavDropdown>
+          </NavDropdown> */}
           <Navbar.Text>
             Cart
             <a href="#login" className="itemQuntity">

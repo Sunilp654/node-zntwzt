@@ -6,7 +6,7 @@ function ProductCard() {
   return (
     <Container className="mt-3 card-section">
       <h3 className="text-center my-5">
-        <span className="top-heading">TOP SELL PRODUCT</span>
+        <span className="top-heading">All PRODUCT</span>
       </h3>
       <Row>
         <Col md={4} className="mb-2">
@@ -16,7 +16,7 @@ function ProductCard() {
               src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/09/product-photography-types-water-bottle.jpg"
             />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
+              <Card.Title>Card Title </Card.Title>
               <Card.Text>
                 Some quick example text to build on the card title and make up
                 the bulk of the card's content.
