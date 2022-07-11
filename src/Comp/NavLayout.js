@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 // import { NavDropdown } from 'react-bootstrap';
 
 function NavLayout() {
@@ -11,9 +12,15 @@ function NavLayout() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">About</Nav.Link>
-            <Nav.Link href="#E">Electronics</Nav.Link>
+            <Nav.Link>
+              <Link to="/">Home</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/About">About</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/Electronics">Electronics</Link>
+            </Nav.Link>
             <Nav.Link href="#jewelry">jewelry</Nav.Link>
             <Nav.Link href="#Men">Men's clothing</Nav.Link>
             <Nav.Link href="#Women">Women's clothing</Nav.Link>

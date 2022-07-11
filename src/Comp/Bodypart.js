@@ -1,5 +1,5 @@
-import CarouselSlider from './Comp/CarouselSlider';
-import ProductCard from './Comp/ProductCard';
+import CarouselSlider from './CarouselSlider';
+import ProductCard from './ProductCard';
 
 function Bodypart() {
   return (
