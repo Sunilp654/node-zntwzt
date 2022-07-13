@@ -36,7 +36,7 @@ function Login() {
           LogIn
         </Button>
         <p>
-          If you don't have an Account. Please
+          If you don't have an account. Please
           <a
             style={{
               cursor: 'pointer',
@@ -80,7 +80,7 @@ function Login() {
           Sign Up
         </Button>
         <p>
-          If you Registored. Please
+          If you have an acccount. Please
           <a
             style={{
               cursor: 'pointer',
