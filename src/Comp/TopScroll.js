@@ -1,1 +1,7 @@
-https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
+import { Button } from 'react-bootstrap';
+
+function TopScroll() {
+  return <Button className="Topscroll">TOP</Button>;
+}
+
+export default TopScroll;

@@ -55,6 +55,8 @@ i.eyeicon {
 .hidediv1 {
   display: none;
 }
+.Topscroll {
+}
 @media (max-width: 768px) {
   .slider img {
     height: 220px;
