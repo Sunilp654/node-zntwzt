@@ -2,6 +2,9 @@
   height: 320px;
   object-fit: cover;
 }
+body {
+  position: relative;
+}
 
 .card-section img {
   height: 150px;
@@ -56,6 +59,11 @@ i.eyeicon {
   display: none;
 }
 .Topscroll {
+  position: absolute;
+  bottom: 24px;
+  right: 16px;
+  border-radius: 34px;
+  padding: 14px 10px;
 }
 @media (max-width: 768px) {
   .slider img {
