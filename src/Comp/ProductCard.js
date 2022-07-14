@@ -44,7 +44,7 @@ function ProductCard() {
                 <Card style={{ width: '100%' }}>
                   <Card.Img variant="top" src={post.image} />
                   <Card.Body>
-                    <Card.Title>
+                    <Card.Title className="d-flex justify-content-between">
                       {`${post.title.substring(0, 15)}...`}
                       <span style={{ paddingLeft: '25px', color: 'blue' }}>
                         {post.price}
