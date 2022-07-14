@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 function ProductCard() {
   const [data, setData] = useState([]);
+  const arrObjOne = [...new Map(data.map((item) => [item.category])), 'All'];
 
   useEffect(() => {
     const fetchdata = async () => {
@@ -25,8 +26,17 @@ function ProductCard() {
           md={8}
           className="mx-auto pb-4 catogery-link d-flex justify-content-center"
         >
-          <Button className="mx-2">Electronics</Button>
-          <Button className="mx-2">Electronics</Button>
+          {arrObjOne.map((postC, index) => {
+            return (
+              <Button
+                className="mx-2"
+                style={{ textTransform: 'capitalize' }}
+                key={index}
+              >
+                {postC}
+              </Button>
+            );
+          })}
         </Col>
       </Row>
 
