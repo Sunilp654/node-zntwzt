@@ -62,6 +62,8 @@ i.eyeicon {
   border-radius: 34px;
   padding: 14px 10px;
 }
+.category-link {
+}
 @media (max-width: 768px) {
   .slider img {
     height: 220px;

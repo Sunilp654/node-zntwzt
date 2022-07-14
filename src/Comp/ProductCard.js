@@ -20,6 +20,22 @@ function ProductCard() {
       <h3 className="text-center my-5">
         <span className="top-heading">All PRODUCTS</span>
       </h3>
+      {/* <Row>
+        <ul>
+          <li>
+            <Button>Electronics</Button>
+          </li>
+          <li>
+            <Button>Men's Clothing</Button>
+          </li>
+          <li>
+            <Button>Women's Clothing</Button>
+          </li>
+          <li>
+            <Button>Wg</Button>
+          </li>
+        </ul>
+      </Row> */}
       <Row>
         {data.map((post, index) => {
           return (
