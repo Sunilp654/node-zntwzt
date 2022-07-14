@@ -4,11 +4,28 @@ import { Form } from 'react-bootstrap';
 
 function Login() {
   const [hideandshow, setHideandshow] = useState(false);
+  const [eyeicons, setEyeicons] = useState(false);
+  const [eyeiconsLogin, setEyeiconsLogin] = useState(false);
   const clickhide = () => {
     setHideandshow(true);
   };
   const clickhide2 = () => {
     setHideandshow(false);
+  };
+  const Togglebtn = () => {
+    if (eyeicons == true) {
+      setEyeicons(false);
+    } else if (eyeicons == false) {
+      setEyeicons(true);
+    }
+  };
+
+  const Togglebtnlogin = () => {
+    if (eyeiconsLogin == true) {
+      setEyeiconsLogin(false);
+    } else if (eyeiconsLogin == false) {
+      setEyeiconsLogin(true);
+    }
   };
 
   // if (hideandshow == true) {
@@ -28,8 +45,18 @@ function Login() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <div style={{ position: 'relative' }}>
-            <Form.Control type="password" placeholder="Password" />
-            <i class="fa fa-eye eyeicon" aria-hidden="true"></i>
+            <Form.Control
+              type={eyeiconsLogin ? 'text' : 'password'}
+              placeholder="Password"
+            />
+            <i
+              className={
+                eyeiconsLogin ? 'fa fa-eye-slash eyeicon' : 'fa fa-eye eyeicon'
+              }
+              aria-hidden="true"
+              onClick={Togglebtnlogin}
+              aria-hidden="true"
+            ></i>
           </div>
         </Form.Group>
         <Button variant="primary" type="submit">
@@ -68,8 +95,17 @@ function Login() {
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Password</Form.Label>
           <div style={{ position: 'relative' }}>
-            <Form.Control type="password" placeholder="Password" />
-            <i class="fa fa-eye eyeicon" aria-hidden="true"></i>
+            <Form.Control
+              type={eyeicons ? 'text' : 'password'}
+              placeholder="Password"
+            />
+            <i
+              className={
+                eyeicons ? 'fa fa-eye-slash eyeicon' : 'fa fa-eye eyeicon'
+              }
+              aria-hidden="true"
+              onClick={Togglebtn}
+            ></i>
           </div>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
