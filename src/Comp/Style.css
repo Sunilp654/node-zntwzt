@@ -62,7 +62,10 @@ i.eyeicon {
   border-radius: 34px;
   padding: 14px 10px;
 }
-
+.catogery-link button {
+  border-radius: 20px;
+  padding: 5px 20px;
+}
 @media (max-width: 768px) {
   .slider img {
     height: 220px;
