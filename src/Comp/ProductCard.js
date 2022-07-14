@@ -44,7 +44,7 @@ function ProductCard() {
         {data.map((post, index) => {
           return (
             <>
-              <Col md={4} className="mb-2" id={index}>
+              <Col md={4} className="mb-2 producthover" id={index}>
                 <Card style={{ width: '100%' }}>
                   <Card.Img variant="top" src={post.image} />
                   <Card.Body>

@@ -72,3 +72,9 @@ i.eyeicon {
     object-fit: cover;
   }
 }
+.producthover .card {
+  cursor: pointer;
+}
+.producthover .card:hover {
+  border: 1px solid rgb(33, 143, 187);
+}
