@@ -5,14 +5,7 @@ import { useState, useEffect } from 'react';
 
 function ProductCard() {
   const [data, setData] = useState([]);
-
-  //const newNumbers = Object.assign([], data);
-  //const dataF = localStorage.setItem(newNumbers);
-  //console.log(dataF, 'data');
-  //const getdata = data;
-  //const [datafind] = useState([data]);
-  //const [dataget] = useState(data);
-  const arrObjOne = [...new Map(data.map((item) => [item.category])), 'All'];
+  const arrObjOne = [...new Set(data.map((item) => item.category)), 'All'];
 
   useEffect(() => {
     const fetchdata = async () => {
