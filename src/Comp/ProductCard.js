@@ -5,6 +5,13 @@ import { useState, useEffect } from 'react';
 
 function ProductCard() {
   const [data, setData] = useState([]);
+
+  //const newNumbers = Object.assign([], data);
+  //const dataF = localStorage.setItem(newNumbers);
+  //console.log(dataF, 'data');
+  //const getdata = data;
+  //const [datafind] = useState([data]);
+  //const [dataget] = useState(data);
   const arrObjOne = [...new Map(data.map((item) => [item.category])), 'All'];
 
   useEffect(() => {
@@ -15,7 +22,13 @@ function ProductCard() {
     };
     fetchdata();
   }, []);
-
+  const filterdata = (curcat) => {
+    const newItem = data.filter((newVal) => {
+      return newVal.category === curcat;
+      // comparing category for displaying data
+    });
+    setData(newItem);
+  };
   return (
     <Container className="mt-3 card-section">
       <h3 className="text-center my-5">
@@ -32,6 +45,7 @@ function ProductCard() {
                 className="mx-2"
                 style={{ textTransform: 'capitalize' }}
                 key={index}
+                onClick={() => filterdata(postC)}
               >
                 {postC}
               </Button>
