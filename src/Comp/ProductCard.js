@@ -5,13 +5,20 @@ import { useState, useEffect } from 'react';
 
 function ProductCard() {
   const [data, setData] = useState([]);
-  const arrObjOne = [...new Set(data.map((item) => item.category)), 'All'];
+  const [filterdataI, setfilterDataI] = useState([]);
+  const arrObjOne = [
+    ...new Set(filterdataI.map((item) => item.category)),
+    'All',
+  ];
+  console.log(data, 'data');
+  console.log(filterdataI, 'data2');
 
   useEffect(() => {
     const fetchdata = async () => {
       const response = await fetch('https://fakestoreapi.com/products');
       const postsData = await response.json();
       setData(postsData);
+      setfilterDataI(postsData);
     };
     fetchdata();
   }, []);
