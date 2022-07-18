@@ -1,5 +1,5 @@
 import { Container, Row, Col } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
+import CatButton from './CatButton';
 import { useState, useEffect } from 'react';
 import Cards from './Cards';
 
@@ -19,10 +19,7 @@ function ProductCard() {
   //console.log(datafind2d, 'datadd');
   //const [data, setData] = useState(datafind);
   const [filterdataI, setfilterDataI] = useState([]);
-  const arrObjOne = [
-    ...new Set(filterdataI.map((item) => item.category)),
-    'All',
-  ];
+
   // console.log(data, 'data');
   // console.log(filterdataI, 'data2');
 
@@ -47,18 +44,7 @@ function ProductCard() {
           md={8}
           className="mx-auto pb-4 catogery-link d-flex justify-content-center"
         >
-          {arrObjOne.map((postC, index) => {
-            return (
-              <Button
-                className="mx-2"
-                style={{ textTransform: 'capitalize' }}
-                key={index}
-                onClick={() => filterdata(postC)}
-              >
-                {postC}
-              </Button>
-            );
-          })}
+          <CatButton filterdata={filterdata} NavItem={filterdataI} />
         </Col>
       </Row>
 
