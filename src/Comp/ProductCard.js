@@ -1,33 +1,41 @@
 import { Container, Row, Col } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import { Card } from 'react-bootstrap';
 import { useState, useEffect } from 'react';
+import Cards from './Cards';
 
 function ProductCard() {
-  const [data, setData] = useState([]);
+  const [data2, setData2] = useState([]);
+  const datafind = data2;
+  //const [datafind2d] = useState(data2);
+  //console.log(datafind2d, 'datadd');
+  //const [data, setData] = useState(datafind);
   const [filterdataI, setfilterDataI] = useState([]);
   const arrObjOne = [
     ...new Set(filterdataI.map((item) => item.category)),
     'All',
   ];
-  console.log(data, 'data');
-  console.log(filterdataI, 'data2');
+  // console.log(data, 'data');
+  // console.log(filterdataI, 'data2');
 
   useEffect(() => {
     const fetchdata = async () => {
       const response = await fetch('https://fakestoreapi.com/products');
       const postsData = await response.json();
-      setData(postsData);
+      setData2(postsData);
       setfilterDataI(postsData);
     };
     fetchdata();
   }, []);
   const filterdata = (curcat) => {
-    const newItem = data.filter((newVal) => {
+    const newItem = data2.filter((newVal) => {
       return newVal.category === curcat;
       // comparing category for displaying data
     });
-    setData(newItem);
+    setData2(newItem);
+
+    if (curcat === 'All') {
+      setData2(data2);
+    }
   };
   return (
     <Container className="mt-3 card-section">
@@ -55,38 +63,7 @@ function ProductCard() {
       </Row>
 
       <Row>
-        {data.map((post, index) => {
-          return (
-            <>
-              <Col md={4} className="mb-2 producthover" id={index}>
-                <Card style={{ width: '100%' }}>
-                  <Card.Img variant="top" src={post.image} />
-                  <Card.Body>
-                    <Card.Title className="d-flex justify-content-between">
-                      {`${post.title.substring(0, 15)}...`}
-                      <span style={{ paddingLeft: '25px', color: 'blue' }}>
-                        {post.price}
-                        {' $'}
-                      </span>
-                    </Card.Title>
-                    <Card.Text>{`${post.description.substring(
-                      0,
-                      50
-                    )}...`}</Card.Text>
-                    <Row className="d-flex flex-row">
-                      <Col md={6} xs={6}>
-                        <Button variant="primary">Add To Cart</Button>
-                      </Col>
-                      <Col md={6} xs={6}>
-                        <Button variant="dark">Add To WishList</Button>
-                      </Col>
-                    </Row>
-                  </Card.Body>
-                </Card>
-              </Col>
-            </>
-          );
-        })}
+        <Cards dataprop={datafind} />
       </Row>
     </Container>
   );
