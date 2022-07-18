@@ -4,6 +4,15 @@ import { useState, useEffect } from 'react';
 import Cards from './Cards';
 
 function ProductCard() {
+  useEffect(() => {
+    const fetchdata = async () => {
+      const response = await fetch('https://fakestoreapi.com/products');
+      const postsData = await response.json();
+      setData2(postsData);
+      setfilterDataI(postsData);
+    };
+    fetchdata();
+  }, []);
   const [data2, setData2] = useState([]);
   const datafind = data2;
   //const [datafind2d] = useState(data2);
@@ -17,15 +26,6 @@ function ProductCard() {
   // console.log(data, 'data');
   // console.log(filterdataI, 'data2');
 
-  useEffect(() => {
-    const fetchdata = async () => {
-      const response = await fetch('https://fakestoreapi.com/products');
-      const postsData = await response.json();
-      setData2(postsData);
-      setfilterDataI(postsData);
-    };
-    fetchdata();
-  }, []);
   const filterdata = (curcat) => {
     const newItem = data2.filter((newVal) => {
       return newVal.category === curcat;
