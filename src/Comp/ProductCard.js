@@ -14,10 +14,8 @@ function ProductCard() {
     fetchdata();
   }, []);
   const [data2, setData2] = useState([]);
+  //const [datafilter, setdataFilter] = useState([]);
   const datafind = data2;
-  //const [datafind2d] = useState(data2);
-  //console.log(datafind2d, 'datadd');
-  //const [data, setData] = useState(datafind);
   const [filterdataI, setfilterDataI] = useState([]);
 
   // console.log(data, 'data');
