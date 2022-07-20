@@ -34,9 +34,7 @@ function Footer() {
             <div className="d-flex flex-column">
               <input type="text" placeholder="Email*" className="mb-2" />
               <textarea placeholder="Message*" className="mb-2"></textarea>
-              <Button className="btn" className="mb-2">
-                Submit
-              </Button>
+              <Button className="btn mb-2">Submit</Button>
             </div>
           </Col>
         </Row>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 const Filter = ({ popular, setFiltered, activeGenre, setActiveGenre }) => {
+
   useEffect(() => {
     if (activeGenre === 0) {
       setFiltered(popular); //Checks- don't do anything, just return all

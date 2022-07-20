@@ -1,5 +1,5 @@
 import { Button } from 'react-bootstrap';
-import React from 'react';
+import { useEffect, useState } from 'react';
 const CatButton = ({
   data2,
   setData2,
@@ -8,23 +8,24 @@ const CatButton = ({
   filterdataI,
   setfilterDataI,
 }) => {
+  const [filtercat, setfiltercat] = useState('All');
+  useEffect(() => {
+    if (filtercat === 'All') {
+      setData2(datafilter);
+      return;
+    }
+    //console.log(arrObjOne);
+    const newItem = data2.filter((newVal) => {
+      return newVal.category === filtercat;
+      // comparing category for displaying data
+    });
+    setData2(newItem);
+  }, [filtercat]);
+
   const arrObjOne = [
     ...new Set(filterdataI.map((item) => item.category)),
     'All',
   ];
-  //console.log(arrObjOne);
-
-  const filterdata = (curcat) => {
-    const newItem = data2.filter((newVal) => {
-      return newVal.category === curcat;
-      // comparing category for displaying data
-    });
-    setData2(newItem);
-
-    if (curcat === 'All') {
-      setData2(datafilter);
-    }
-  };
   return (
     <>
       {arrObjOne.map((postC, index) => {
@@ -33,7 +34,7 @@ const CatButton = ({
             className="mx-2"
             style={{ textTransform: 'capitalize' }}
             key={index}
-            onClick={() => filterdata(postC)}
+            onClick={() => setfiltercat(postC)}
           >
             {postC}
           </Button>
