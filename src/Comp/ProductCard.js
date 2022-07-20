@@ -4,34 +4,22 @@ import { useState, useEffect } from 'react';
 import Cards from './Cards';
 
 function ProductCard() {
+  const url = 'https://fakestoreapi.com/products';
+  const [data2, setData2] = useState([]);
+  const [datafilter, setdataFilter] = useState([]);
+  //const datafind = data2;
+  const [filterdataI, setfilterDataI] = useState([]);
   useEffect(() => {
     const fetchdata = async () => {
-      const response = await fetch('https://fakestoreapi.com/products');
+      const response = await fetch(url);
       const postsData = await response.json();
       setData2(postsData);
       setfilterDataI(postsData);
+      setdataFilter(postsData);
     };
     fetchdata();
   }, []);
-  const [data2, setData2] = useState([]);
-  //const [datafilter, setdataFilter] = useState([]);
-  const datafind = data2;
-  const [filterdataI, setfilterDataI] = useState([]);
 
-  // console.log(data, 'data');
-  // console.log(filterdataI, 'data2');
-
-  const filterdata = (curcat) => {
-    const newItem = data2.filter((newVal) => {
-      return newVal.category === curcat;
-      // comparing category for displaying data
-    });
-    setData2(newItem);
-
-    if (curcat === 'All') {
-      setData2(data2);
-    }
-  };
   return (
     <Container className="mt-3 card-section">
       <h3 className="text-center my-5">
@@ -42,12 +30,19 @@ function ProductCard() {
           md={8}
           className="mx-auto pb-4 catogery-link d-flex justify-content-center"
         >
-          <CatButton filterdata={filterdata} NavItem={filterdataI} />
+          <CatButton
+            data2={data2}
+            setData2={setData2}
+            datafilter={datafilter}
+            filterdataI={filterdataI}
+            setdataFilter={setdataFilter}
+            setfilterDataI={setfilterDataI}
+          />
         </Col>
       </Row>
 
       <Row>
-        <Cards dataprop={datafind} />
+        <Cards dataprop={data2} />
       </Row>
     </Container>
   );
