@@ -1,26 +1,20 @@
 import { Button } from 'react-bootstrap';
 import { useEffect } from 'react';
 const CatButton = ({
-  data,
-  setData,
-  datafilter,
-  setdataFilter,
-  filterdataI,
-  setfilterDataI,
+  popular,
+  setFiltered,
+  activeGenre,
+  setActiveGenre,
+  filtered2,
 }) => {
   useEffect(() => {
-    //console.log(arrObjOne);
-    const newItem = data.filter((newVal) => {
-      return newVal.category === filterdataI;
-      // comparing category for displaying data
-    });
-    setData(newItem);
-  }, [filterdataI]);
-
-  const arrObjOne = [
-    ...new Set(datafilter.map((item) => item.category)),
-    'All',
-  ];
+    const filtered = popular.filter((movie) => movie.category === activeGenre);
+    setFiltered(filtered);
+    if (activeGenre === 'All') {
+      setFiltered(popular);
+    }
+  }, [activeGenre]);
+  const arrObjOne = [...new Set(filtered2.map((item) => item.category)), 'All'];
   return (
     <>
       {arrObjOne.map((postC, index) => {
@@ -29,13 +23,12 @@ const CatButton = ({
             className="mx-2"
             style={{ textTransform: 'capitalize' }}
             key={index}
-            onClick={() => setfilterDataI(postC)}
+            onClick={() => setActiveGenre(postC)}
           >
             {postC}
           </Button>
         );
       })}
-      {/* //<Button>asdf</Button> */}
     </>
   );
 };

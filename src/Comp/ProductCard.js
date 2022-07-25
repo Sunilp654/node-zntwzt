@@ -1,50 +1,46 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import CatButton from './CatButton';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { Container, Row } from 'react-bootstrap';
 import Cards from './Cards';
-
-function ProductCard() {
+import CatButton from '../Comp/CatButton';
+const ProductCard = () => {
   const url = 'https://fakestoreapi.com/products';
-  const [data, setData] = useState([]);
-  const [datafilter, setdataFilter] = useState([]);
-  const [filterdataI, setfilterDataI] = useState();
+  const [popular, setPopular] = useState([]);
+  const [filtered, setFiltered] = useState([]);
+  const [filtered2, setFiltered2] = useState([]);
+  const [activeGenre, setActiveGenre] = useState();
   useEffect(() => {
-    const fetchdata = async () => {
-      const response = await fetch(url);
-      const postsData = await response.json();
-      setData(postsData);
-      setfilterDataI(postsData);
-      setdataFilter(postsData);
-    };
-    fetchdata();
+    fetchPopular();
   }, []);
-
+  const fetchPopular = async () => {
+    const data = await fetch(url);
+    const dataget = await data.json();
+    //console.log(dataget);
+    setPopular(dataget);
+    setFiltered(dataget);
+    setFiltered2(dataget);
+  };
   return (
-    <Container className="mt-3 card-section">
-      <h3 className="text-center my-5">
-        <span className="top-heading">All PRODUCTS</span>
-      </h3>
-      <Row>
-        <Col
-          md={8}
-          className="mx-auto pb-4 catogery-link d-flex justify-content-center"
-        >
-          <CatButton
-            data={data}
-            setData={setData}
-            datafilter={datafilter}
-            filterdataI={filterdataI}
-            setdataFilter={setdataFilter}
-            setfilterDataI={setfilterDataI}
-          />
-        </Col>
-      </Row>
+    <>
+      <div className="App">
+        <h1 className="my-3">All Products</h1>
+        <CatButton
+          popular={popular}
+          setFiltered={setFiltered}
+          activeGenre={activeGenre}
+          setActiveGenre={setActiveGenre}
+          filtered2={filtered2}
+        />
+      </div>
 
-      <Row>
-        <Cards dataprop={data} />
-      </Row>
-    </Container>
+      <Container className="mt-4 appclass">
+        <Row>
+          {filtered.map((datafind) => {
+            return <Cards datafind={datafind} />;
+          })}
+        </Row>
+      </Container>
+    </>
   );
-}
-
+};
 export default ProductCard;

@@ -1,30 +1,32 @@
+import { Button } from 'react-bootstrap';
 import { useEffect } from 'react';
-const Filter = ({ popular, setFiltered, activeGenre, setActiveGenre }) => {
+const Filter = ({
+  popular,
+  setFiltered,
+  activeGenre,
+  setActiveGenre,
+  filtered2,
+}) => {
   useEffect(() => {
     const filtered = popular.filter((movie) => movie.category === activeGenre);
     setFiltered(filtered);
   }, [activeGenre]);
+  const arrObjOne = [...new Set(filtered2.map((item) => item.category)), 'All'];
   return (
-    <div className="filter-container">
-      <button
-        onClick={() => setActiveGenre('jewelery')}
-        className={activeGenre === 0 ? 'active' : ''}
-      >
-        jewelery
-      </button>
-      <button
-        onClick={() => setActiveGenre('electronics')}
-        className={activeGenre === 35 ? 'active' : ''}
-      >
-        electronics
-      </button>
-      <button
-        onClick={() => setActiveGenre("women's clothing")}
-        className={activeGenre === 28 ? 'active' : ''}
-      >
-        women's clothing
-      </button>
-    </div>
+    <>
+      {arrObjOne.map((postC, index) => {
+        return (
+          <Button
+            className="mx-2"
+            style={{ textTransform: 'capitalize' }}
+            key={index}
+            onClick={() => setActiveGenre(postC)}
+          >
+            {postC}
+          </Button>
+        );
+      })}
+    </>
   );
 };
 export default Filter;
