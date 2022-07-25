@@ -1,29 +1,24 @@
 import { Button } from 'react-bootstrap';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 const CatButton = ({
-  data2,
-  setData2,
+  data,
+  setData,
   datafilter,
   setdataFilter,
   filterdataI,
   setfilterDataI,
 }) => {
-  const [filtercat, setfiltercat] = useState('All');
   useEffect(() => {
-    if (filtercat === 'All') {
-      setData2(datafilter);
-      return;
-    }
     //console.log(arrObjOne);
-    const newItem = data2.filter((newVal) => {
-      return newVal.category === filtercat;
+    const newItem = data.filter((newVal) => {
+      return newVal.category === filterdataI;
       // comparing category for displaying data
     });
-    setData2(newItem);
-  }, [filtercat]);
+    setData(newItem);
+  }, [filterdataI]);
 
   const arrObjOne = [
-    ...new Set(filterdataI.map((item) => item.category)),
+    ...new Set(datafilter.map((item) => item.category)),
     'All',
   ];
   return (
@@ -34,7 +29,7 @@ const CatButton = ({
             className="mx-2"
             style={{ textTransform: 'capitalize' }}
             key={index}
-            onClick={() => setfiltercat(postC)}
+            onClick={() => setfilterDataI(postC)}
           >
             {postC}
           </Button>

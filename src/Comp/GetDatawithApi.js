@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Movie from './Movie';
 import Filter from './Filter';
 const GetDatawithApi = () => {
-  const url =
-    'https://api.themoviedb.org/3/movie/popular?api_key=19dedc791dc255982eaf84be8a93012a&language=en-US&page=1';
+  const url = 'https://fakestoreapi.com/products';
   const [popular, setPopular] = useState([]);
   const [filtered, setFiltered] = useState([]);
-  const [activeGenre, setActiveGenre] = useState(0);
+  const [activeGenre, setActiveGenre] = useState();
   useEffect(() => {
     fetchPopular();
   }, []);
@@ -14,8 +13,8 @@ const GetDatawithApi = () => {
     const data = await fetch(url);
     const movies = await data.json();
     console.log(movies);
-    setPopular(movies.results);
-    setFiltered(movies.results);
+    setPopular(movies);
+    setFiltered(movies);
   };
   return (
     <div className="App">

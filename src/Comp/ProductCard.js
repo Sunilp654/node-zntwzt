@@ -5,15 +5,14 @@ import Cards from './Cards';
 
 function ProductCard() {
   const url = 'https://fakestoreapi.com/products';
-  const [data2, setData2] = useState([]);
+  const [data, setData] = useState([]);
   const [datafilter, setdataFilter] = useState([]);
-  //const datafind = data2;
-  const [filterdataI, setfilterDataI] = useState([]);
+  const [filterdataI, setfilterDataI] = useState();
   useEffect(() => {
     const fetchdata = async () => {
       const response = await fetch(url);
       const postsData = await response.json();
-      setData2(postsData);
+      setData(postsData);
       setfilterDataI(postsData);
       setdataFilter(postsData);
     };
@@ -31,8 +30,8 @@ function ProductCard() {
           className="mx-auto pb-4 catogery-link d-flex justify-content-center"
         >
           <CatButton
-            data2={data2}
-            setData2={setData2}
+            data={data}
+            setData={setData}
             datafilter={datafilter}
             filterdataI={filterdataI}
             setdataFilter={setdataFilter}
@@ -42,7 +41,7 @@ function ProductCard() {
       </Row>
 
       <Row>
-        <Cards dataprop={data2} />
+        <Cards dataprop={data} />
       </Row>
     </Container>
   );

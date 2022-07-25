@@ -1,35 +1,28 @@
 import { useEffect } from 'react';
 const Filter = ({ popular, setFiltered, activeGenre, setActiveGenre }) => {
-
   useEffect(() => {
-    if (activeGenre === 0) {
-      setFiltered(popular); //Checks- don't do anything, just return all
-      return;
-    }
-    const filtered = popular.filter((movie) =>
-      movie.genre_ids.includes(activeGenre)
-    );
+    const filtered = popular.filter((movie) => movie.category === activeGenre);
     setFiltered(filtered);
   }, [activeGenre]);
   return (
     <div className="filter-container">
       <button
-        onClick={() => setActiveGenre(0)}
+        onClick={() => setActiveGenre('jewelery')}
         className={activeGenre === 0 ? 'active' : ''}
       >
-        All
+        jewelery
       </button>
       <button
-        onClick={() => setActiveGenre(35)}
+        onClick={() => setActiveGenre('electronics')}
         className={activeGenre === 35 ? 'active' : ''}
       >
-        Comedy
+        electronics
       </button>
       <button
-        onClick={() => setActiveGenre(28)}
+        onClick={() => setActiveGenre("women's clothing")}
         className={activeGenre === 28 ? 'active' : ''}
       >
-        Action
+        women's clothing
       </button>
     </div>
   );
