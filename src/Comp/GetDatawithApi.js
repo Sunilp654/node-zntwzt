@@ -19,7 +19,7 @@ const GetDatawithApi = () => {
     setFiltered2(movies);
   };
   return (
-    <div className="App">
+    <div className="appclass">
       <h1>Movies</h1>
       <Filter
         popular={popular}
