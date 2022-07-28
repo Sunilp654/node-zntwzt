@@ -1,3 +1,4 @@
+import Products from './Products';
 const Home = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const Home = () => {
           <p className="card-text">Last updated 3 mins ago</p> */}
         </div>
       </div>
+      <Products />
     </>
   );
 };

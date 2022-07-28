@@ -5,7 +5,7 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
   //console.log(data, 'data');
-  useEffect(() => { 
+  useEffect(() => {
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch('https://fakestoreapi.com/products');
@@ -69,6 +69,13 @@ const Products = () => {
       </>
     );
   };
+  const filterProduct = (cat) => {
+    const updatedList = data.filter((catdata) => catdata.category === cat);
+    setFilter(updatedList);
+    if (cat === 'All') {
+      setFilter(data);
+    }
+  };
 
   const ShowProducts = () => {
     return (
@@ -80,6 +87,7 @@ const Products = () => {
                 <button
                   className="btn btn-outline-dark ms-2 text-capitalize"
                   key={index}
+                  onClick={() => filterProduct(Catdata)}
                 >
                   {Catdata}
                 </button>

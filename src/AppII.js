@@ -3,13 +3,20 @@ import './CompII/Style.css';
 import NavBar from './CompII/NavBar';
 import Home from './CompII/Home';
 import Products from './CompII/Products';
+import Product from './CompII/Product';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const AppII = () => {
   return (
     <>
-      <NavBar />
-      <Home />
-      <Products />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Products" element={<Products />} />
+          <Route path="/Products/:id" element={<Product />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };
