@@ -8,7 +8,7 @@ const Products = () => {
   let componentMounted = true;
   //console.log(data, 'data'); 
   useEffect(() => {
-    const getProducts = async () => {
+    const getProducts = async () => { 
       setLoading(true);
       const response = await fetch('https://fakestoreapi.com/products');
       // const dataget = await response.json();
