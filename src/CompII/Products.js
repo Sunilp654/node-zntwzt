@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Redirect } from 'react';
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   //const [showpage, setShowpage] = useState(false);
   let componentMounted = true;
-  //console.log(data, 'data'); 
+  //console.log(data, 'data');
   useEffect(() => {
-    const getProducts = async () => { 
+    const getProducts = async () => {
       setLoading(true);
       const response = await fetch('https://fakestoreapi.com/products');
       // const dataget = await response.json();
@@ -28,6 +28,14 @@ const Products = () => {
     return <p className="text-center">Loading...</p>;
   };
   const catogeryfind = [...new Set(data.map((item) => item.category)), 'All'];
+
+  const getid = (id) => {
+    const updatedList = id;
+    if (id != '') {
+      <Redirect to="/product" id={id} />;
+    }
+    //console.log(updatedList);
+  };
 
   const Product = () => {
     return (
@@ -57,12 +65,18 @@ const Products = () => {
                           <br></br>
                           {/* {`${allProduct.description.substring(0, 50)}...`} */}
                         </p>
-                        <NavLink
+                        {/* <NavLink
                           to={`/Product/${allProduct.id}`}
                           className="btn btn-outline-dark "
                         >
                           Buy Now
-                        </NavLink>
+                        </NavLink> */}
+                        <button
+                          className="btn btn-outline-dark"
+                          onClick={() => getid(allProduct.id)}
+                        >
+                          Buy Now
+                        </button>
                       </div>
                     </div>
                   </div>

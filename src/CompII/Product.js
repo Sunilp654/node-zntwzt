@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-const Product = () => {
-  const [id] = useParams();
+//import { useParams } from 'react-router-dom';
+const Product = ({ id }) => {
+  //const [id] = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
