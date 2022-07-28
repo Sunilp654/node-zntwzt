@@ -1,15 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navigation from './Comp/Navigation';
-import Footer from './Comp/Footer';
-import TopScroll from './Comp/TopScroll';
-import './Comp/Style.css';
+import './CompII/Style.css';
 
 function AppII() {
   return (
     <>
-      <Navigation />
-      <Footer />
-      <TopScroll />
+      <h3>Hello World</h3>
     </>
   );
 }
