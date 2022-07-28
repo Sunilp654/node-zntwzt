@@ -1,12 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CompII/Style.css';
+import NavBar from './CompII/NavBar';
+import Home from './CompII/Home';
+import Products from './CompII/Products';
 
-function AppII() {
+const AppII = () => {
   return (
     <>
-      <h3>Hello World</h3>
+      <NavBar />
+      <Home />
+      <Products />
     </>
   );
-}
+};
 
 export default AppII;
