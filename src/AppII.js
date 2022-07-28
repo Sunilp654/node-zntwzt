@@ -14,7 +14,7 @@ const AppII = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Products" element={<Products />} />
-          <Route path="/Products/:id" element={<Product />} />
+          <Route path="/Product/:id" element={<Product />} />
         </Routes>
       </BrowserRouter>
     </>

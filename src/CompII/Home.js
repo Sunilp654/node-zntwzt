@@ -6,7 +6,7 @@ const Home = () => {
         <img
           className="card-img banner-img"
           src="https://t3.ftcdn.net/jpg/03/69/39/42/240_F_369394275_dllyGftwzeIWUNkh3b59T5nZdvX33whW.jpg"
-          alt="Card-image"
+          alt="Card"
         />
         <div className="card-img-overlay">
           {/* <h5 className="card-title">Card title</h5>

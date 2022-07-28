@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
+  //const [showpage, setShowpage] = useState(false);
   let componentMounted = true;
   //console.log(data, 'data');
   useEffect(() => {
@@ -55,9 +57,12 @@ const Products = () => {
                           <br></br>
                           {/* {`${allProduct.description.substring(0, 50)}...`} */}
                         </p>
-                        <a href="#" className="btn btn-outline-dark ">
+                        <NavLink
+                          to={`/Product/${allProduct.id}`}
+                          className="btn btn-outline-dark "
+                        >
                           Buy Now
-                        </a>
+                        </NavLink>
                       </div>
                     </div>
                   </div>
