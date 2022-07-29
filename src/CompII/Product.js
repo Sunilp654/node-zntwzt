@@ -27,7 +27,7 @@ const Product = () => {
       <>
         <div className="container my-4">
           <div className="row">
-            <div className="col-6">
+            <div className="col-6"> 
               <img
                 style={{ objectFit: 'contain' }}
                 src={productget.image}
