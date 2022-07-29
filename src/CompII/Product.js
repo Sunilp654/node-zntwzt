@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 const Product = () => {
   const { id } = useParams();
   // console.log(id, 'id');
@@ -18,7 +18,7 @@ const Product = () => {
   }, []);
   //console.log(product);
   const Loading = () => {
-    <p className="text-center">Loading...</p>;
+    return <p className="text-center mt-5">Loading...</p>;
   };
   //console.log(productget.title,)
 
@@ -27,7 +27,7 @@ const Product = () => {
       <>
         <div className="container my-4">
           <div className="row">
-            <div className="col-6"> 
+            <div className="col-6">
               <img
                 style={{ objectFit: 'contain' }}
                 src={productget.image}
@@ -50,7 +50,10 @@ const Product = () => {
               <h3 className="my-3">{productget.title}</h3>
               <h6>{productget.description}</h6>
               <h3 className="mt-3">Price: ${productget.price}</h3>
-              <button className="btn btn-outline-dark mt-3">Add To Cart</button>
+              <button className="btn btn-outline-dark my-3">Add To Cart</button>
+              <NavLink to="/Cart" className="btn btn-dark my-3 mx-2">
+                Go To Cart
+              </NavLink>
             </div>
           </div>
         </div>
