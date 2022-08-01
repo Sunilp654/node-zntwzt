@@ -5,7 +5,7 @@ const Products = () => {
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   //const [showpage, setShowpage] = useState(false);
-  let componentMounted = true;
+  let componentMounted = true; 
   //console.log(data, 'data');
   useEffect(() => {
     const getProducts = async () => { 
