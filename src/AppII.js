@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './CompII/Style.css';
+//import './CompII/Style.css';
 import NavBar from './CompII/NavBar';
 import Home from './CompII/Home';
 import Products from './CompII/Products';
