@@ -18,6 +18,7 @@ const AppII = () => {
   const [checkedF, setCheckedF] = useState(false);
   const [checkedSA, setCheckedSA] = useState(true);
   const [checkedSU, setCheckedSU] = useState(true);
+  //const [days] = useState(daysn);
   //const dys = data.applicableOn;
   //const [daysname] = useState(dys);
   return (
@@ -25,30 +26,31 @@ const AppII = () => {
       <Accordion>
         {data.map((dataget) => {
           //const dys = dataget.applicableOn;
-          var pieces = dataget.applicableOn.split(',');
-          {
-            pieces.map((daysname) => {
-              //console.log(daysname, 'days');
-              //switch (daysname) {
-              // case 'Sunday':
-              // return setCheckedSU(true);
-              //       case 'Monday':
-              //         return setCheckedM(true);
-              //       case 'Tuesday':
-              //         return setCheckedT(true);
-              //       case 'Wednesday':
-              //         return setCheckedW(true);
-              //       case 'Thursday':
-              //         return setCheckedTH(true);
-              //       case 'Friday':
-              //         return setCheckedF(true);
-              //       case 'Saturday':
-              //         return setCheckedSA(true);
-              //default:
-              //return null;
-              // }
-            });
-          }
+
+          //const [days] = useState(pieces);
+          const Daysname = () => {
+            var daysn = dataget.applicableOn.split(',');
+            //console.log(daysn, 'days');
+            switch (daysn) {
+              case 'Sunday':
+                return setCheckedSU(true);
+              case 'Monday':
+                return setCheckedM(true);
+              case 'Tuesday':
+                return setCheckedT(true);
+              case 'Wednesday':
+                return setCheckedW(true);
+              case 'Thursday':
+                return setCheckedTH(true);
+              case 'Friday':
+                return setCheckedF(true);
+              case 'Saturday':
+                return setCheckedSA(true);
+              default:
+                return null;
+            }
+          };
+
           //console.log(pieces);
           //console.log(pieces);
           //console.log(dysname);
@@ -58,7 +60,7 @@ const AppII = () => {
                 <Accordion.Header>{dataget.DiscountName}</Accordion.Header>
                 <Accordion.Body>
                   <p>{dataget.StartDate}</p>
-
+                  <Daysname />
                   <div className="checkbox">
                     <label>
                       <input
