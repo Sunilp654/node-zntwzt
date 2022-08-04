@@ -5,10 +5,10 @@ const Products = () => {
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   //const [showpage, setShowpage] = useState(false);
-  let componentMounted = true; 
+  let componentMounted = true;
   //console.log(data, 'data');
   useEffect(() => {
-    const getProducts = async () => { 
+    const getProducts = async () => {
       setLoading(true);
       const response = await fetch('https://fakestoreapi.com/products');
       // const dataget = await response.json();
@@ -28,12 +28,12 @@ const Products = () => {
     return <p className="text-center">Loading...</p>;
   };
   const catogeryfind = [...new Set(data.map((item) => item.category)), 'All'];
-  const [productid, setProductid] = useState();
-  const getid = (id) => {
-    const updatedList = id;
-    setProductid(updatedList);
-    console.log(updatedList);
-  };
+  //const [productid, setProductid] = useState();
+  //const getid = (id) => {
+  //const updatedList = id;
+  //setProductid(updatedList);
+  // console.log(updatedList);
+  //};
 
   const Product = () => {
     return (
