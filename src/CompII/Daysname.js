@@ -1,13 +1,5 @@
 import Weekdays from './CompII/Weekdays';
 const Daysname = ({ daysname }) => {
-  //console.log(daysname);
-
-  // {
-  //   daysname.map((dayitme) => {
-  //     //
-  //   });
-  // }
-
   return (
     <>
       <div className="checkbox">
