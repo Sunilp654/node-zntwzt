@@ -6,9 +6,7 @@ const Daysname = ({ daysname }) => {
         {daysname.map((item) => {
           return (
             <>
-              <div className="data">
-                <Weekdays item={item} />
-              </div>
+              <Weekdays item={item} />
             </>
           );
         })}
