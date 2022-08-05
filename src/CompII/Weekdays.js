@@ -7,6 +7,9 @@ const Weekdays = ({ item }) => {
   const [checkedF, setCheckedF] = useState(false);
   const [checkedSA, setCheckedSA] = useState(false);
   const [checkedSU, setCheckedSU] = useState(false);
+  //console.log(item);
+  //var daysn = item.split(',');
+  //console.log(daysn, 'data');
   return (
     <>
       <label>
