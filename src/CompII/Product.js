@@ -5,7 +5,15 @@ const Product = () => {
   // console.log(id, 'id');
   const [productget, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  //const text = productget.description;
+  const [content, setContent] = useState(false);
+  const text = productget?.description;
+  //const textdata = 'hi this testing data';
+  const showdata = text?.substring(0, 150) + '...';
+  //console.log(showdata, 'test');
+  //console.log(text, 'test2');
+  //const datasub = `${.substring(0, 15)}...`;
+  //console.log(datasub);
   useEffect(() => {
     const getProductdd = async () => {
       setLoading(true);
@@ -48,7 +56,16 @@ const Product = () => {
                 {productget.category}
               </span>
               <h3 className="my-3">{productget.title}</h3>
-              <h6>{productget.description}</h6>
+              <p>
+                {content ? text : showdata}
+                <br></br>
+                <button
+                  className="btn btn-outline-dark mt-2"
+                  onClick={() => setContent(!content)}
+                >
+                  {content ? 'Show less' : 'Show more'}
+                </button>
+              </p>
               <h3 className="mt-3">Price: ${productget.price}</h3>
               <button className="btn btn-outline-dark my-3">Add To Cart</button>
               <NavLink to="/Cart" className="btn btn-dark my-3 mx-2">
