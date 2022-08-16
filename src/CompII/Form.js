@@ -21,7 +21,7 @@ const FormCom = () => {
   return (
     <>
       <Row className="mx-0 my-3">
-        <Col lg={4} className="mx-auto text-center">
+        <Col lg={4} className="mx-auto">
           <input
             className="form-control mb-2"
             type="text"
@@ -94,10 +94,12 @@ const FormCom = () => {
           </button>
         </Col>
 
-        <Col lg={4} className="mx-auto text-center">
+        <Col lg={4} className="mx-auto">
           <h5>Name : </h5>
           <h5>Email : </h5>
           <h5>Password : </h5>
+          <h5>Save as User YES/NO : </h5>
+          <h5>YES/NO : </h5>
         </Col>
       </Row>
     </>
