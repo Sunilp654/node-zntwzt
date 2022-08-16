@@ -63,7 +63,7 @@ const Product = () => {
                   className="btn btn-outline-dark mt-2"
                   onClick={() => setContent(!content)}
                 >
-                  {content ? 'Show less' : 'Show more'}
+                  {content ? 'Show Less' : 'Show More'}
                 </button>
               </p>
               <h3 className="mt-3">Price: ${productget.price}</h3>
