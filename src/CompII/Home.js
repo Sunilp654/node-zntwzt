@@ -3,6 +3,8 @@ import Form from './Form';
 const Home = () => {
   return (
     <>
+      {/*Banner section*/}
+
       {/*<div className="card bg-dark text-white border-0">
         <img
           className="card-img banner-img"
