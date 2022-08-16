@@ -57,9 +57,10 @@ const FormCom = () => {
 
           <Form.Select aria-label="Default select example">
             <option>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="1">Facebook</option>
+            <option value="2">Twitter</option>
+            <option value="3">LinkedIn</option>
+            <option value="3">Google</option>
           </Form.Select>
           {['radio'].map((type) => (
             <div key={`inline-${type}`} className="mb-3 mt-3">
