@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-const Form = () => {
+import Form from 'react-bootstrap/Form';
+const FormCom = () => {
   const [message, setMessage] = useState('');
 
   const handleChange = (event) => {
@@ -24,11 +25,64 @@ const Form = () => {
           <input
             className="form-control mb-2"
             type="text"
-            placeholder="Enter you text"
+            placeholder="Enter you Name"
             onChange={handleChange}
             onKeyPress={keypress}
             value={message}
           />
+          <input
+            className="form-control mb-2"
+            type="text"
+            placeholder="Enter you Email"
+            onChange={handleChange}
+            onKeyPress={keypress}
+            value={message}
+          />
+          <input
+            className="form-control mb-2"
+            type="text"
+            placeholder="Enter you Password"
+            onChange={handleChange}
+            onKeyPress={keypress}
+            value={message}
+          />
+          <input
+            className="form-control mb-2"
+            type="text"
+            placeholder="Enter you Confirm Password"
+            onChange={handleChange}
+            onKeyPress={keypress}
+            value={message}
+          />
+
+          <Form.Select aria-label="Default select example">
+            <option>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </Form.Select>
+          {['radio'].map((type) => (
+            <div key={`inline-${type}`} className="mb-3 mt-3">
+              <Form.Check
+                inline
+                label="Yes"
+                name="group1"
+                type={type}
+                id={`inline-${type}-1`}
+              />
+              <Form.Check
+                inline
+                label="No"
+                name="group1"
+                type={type}
+                id={`inline-${type}-2`}
+              />
+            </div>
+          ))}
+
+          <label className="w-100 mb-2">
+            <input type="checkbox" /> Save as User
+          </label>
           <button
             className="btn btn-dark mb-2"
             onClick={() => {
@@ -38,8 +92,14 @@ const Form = () => {
             Save
           </button>
         </Col>
+
+        <Col lg={4} className="mx-auto text-center">
+          <h5>Name : </h5>
+          <h5>Email : </h5>
+          <h5>Password : </h5>
+        </Col>
       </Row>
     </>
   );
 };
-export default Form;
+export default FormCom;

@@ -1,5 +1,5 @@
 import Products from './Products';
-import Form from './Form';
+import FormCom from './Form';
 const Home = () => {
   return (
     <>
@@ -20,7 +20,7 @@ const Home = () => {
           <p className="card-text">Last updated 3 mins ago</p>
         </div>
       </div> */}
-      <Form />
+      <FormCom />
       <Products />
     </>
   );
