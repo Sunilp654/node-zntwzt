@@ -1,27 +1,10 @@
 import { Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
 const NavBar = () => {
   // const [message, setMessage] = useState('');
   // const clickhandle = () => {
   //   alert("I'm an alert");
   // };
-  const [message, setMessage] = useState('');
-
-  const handleChange = (event) => {
-    setMessage(event.target.value);
-  };
-  const keypress = (event) => {
-    if (event.key === 'Enter') {
-      alert(message);
-      setMessage('');
-    }
-  };
-  const clickbutton = () => {
-    alert(message);
-    setMessage('');
-  };
-
   return (
     <>
       <Nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm">
@@ -29,24 +12,6 @@ const NavBar = () => {
           <NavLink className="navbar-brand fw-bold fs-4" to="/">
             LOGO
           </NavLink>
-          <div md={3} className="d-flex">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Enter you text"
-              onChange={handleChange}
-              onKeyPress={keypress}
-              value={message}
-            />
-            <button
-              className="btn btn-dark"
-              onClick={() => {
-                clickbutton();
-              }}
-            >
-              Add
-            </button>
-          </div>
           <button
             className="navbar-toggler"
             type="button"
