@@ -63,7 +63,7 @@ const FormCom = () => {
             <option value="3">Google</option>
           </Form.Select>
           {['radio'].map((type) => (
-            <div key={`inline-${type}`} className="mb-3 mt-3">
+            <div key={`inline-${type}`} className="mb-3 mt-2">
               <Form.Check
                 inline
                 label="Yes"
