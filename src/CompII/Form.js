@@ -9,7 +9,7 @@ const FormCom = () => {
   const InfoFormChange = (e) => {
     setInputValues((inputValues) => ({
       ...inputValues,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value, 
     }));
   };
 
