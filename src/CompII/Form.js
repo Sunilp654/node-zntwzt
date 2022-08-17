@@ -3,20 +3,28 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 const FormCom = () => {
-  const [message, setMessage] = useState('');
+  //const [message, setMessage] = useState('');
+  const [inputValues, setInputValues] = useState({});
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
+  const InfoFormChange = (e) => {
+    setInputValues((inputValues) => ({
+      ...inputValues,
+      [e.target.name]: e.target.value,
+    }));
   };
-  const keypress = (event) => {
-    if (event.key === 'Enter') {
-      alert(message);
-      setMessage('');
-    }
-  };
+
+  // const handleChange = (event) => {
+  //   setMessage(event.target.value);
+  // };
+  // const keypress = (event) => {
+  //   if (event.key === 'Enter') {
+  //     alert(message);
+  //     setMessage('');
+  //   }
+  // };
   const clickbutton = () => {
-    alert(message);
-    setMessage('');
+    alert(inputValues.name + ' ' + inputValues.password);
+    setInputValues('');
   };
   return (
     <>
@@ -25,20 +33,27 @@ const FormCom = () => {
           <input
             className="form-control mb-2"
             type="text"
+            name="name"
             placeholder="Enter you Name"
-            onChange={handleChange}
-            onKeyPress={keypress}
-            value={message}
+            onChange={InfoFormChange}
+            //onKeyPress={keypress}
+            value={inputValues.name}
           />
           <input
             className="form-control mb-2"
             type="text"
+            name="email"
             placeholder="Enter you Email"
+            onChange={InfoFormChange}
+            value={inputValues.email}
           />
           <input
             className="form-control mb-2"
             type="text"
+            name="password"
             placeholder="Enter you Password"
+            onChange={InfoFormChange}
+            value={inputValues.password}
           />
           <input
             className="form-control mb-2"
@@ -86,7 +101,7 @@ const FormCom = () => {
         </Col>
 
         <Col lg={4} className="mx-auto">
-          <h5>Name : </h5>
+          <h5>Name : {inputValues.name}</h5>
           <h5>Email : </h5>
           <h5>Password : </h5>
           <h5>Save as User YES/NO : </h5>
