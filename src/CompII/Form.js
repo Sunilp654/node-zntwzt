@@ -34,25 +34,16 @@ const FormCom = () => {
             className="form-control mb-2"
             type="text"
             placeholder="Enter you Email"
-            onChange={handleChange}
-            onKeyPress={keypress}
-            value={message}
           />
           <input
             className="form-control mb-2"
             type="text"
             placeholder="Enter you Password"
-            onChange={handleChange}
-            onKeyPress={keypress}
-            value={message}
           />
           <input
             className="form-control mb-2"
             type="text"
             placeholder="Enter you Confirm Password"
-            onChange={handleChange}
-            onKeyPress={keypress}
-            value={message}
           />
 
           <Form.Select aria-label="Default select example">
