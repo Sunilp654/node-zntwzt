@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
@@ -9,9 +9,13 @@ const FormCom = () => {
   const InfoFormChange = (e) => {
     setInputValues((inputValues) => ({
       ...inputValues,
-      [e.target.name]: e.target.value, 
+      [e.target.name]: e.target.value,
     }));
   };
+
+  useEffect(() => {
+    localStorage.setItem('dataKey', JSON.stringify(inputValues));
+  }, [inputValues]);
 
   // const handleChange = (event) => {
   //   setMessage(event.target.value);
@@ -24,7 +28,7 @@ const FormCom = () => {
   // };
   const clickbutton = () => {
     alert(inputValues.name + ' ' + inputValues.password);
-    setInputValues('');
+    //setInputValues('');
   };
   return (
     <>
@@ -101,7 +105,7 @@ const FormCom = () => {
         </Col>
 
         <Col lg={4} className="mx-auto">
-          <h5>Name : {inputValues.name}</h5>
+          <h5>Name : {inputValues.password}</h5>
           <h5>Email : </h5>
           <h5>Password : </h5>
           <h5>Save as User YES/NO : </h5>
