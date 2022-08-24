@@ -27,9 +27,11 @@ const FormCom = () => {
   //   }
   // };
   const clickbutton = () => {
-    alert(inputValues.name + ' ' + inputValues.password);
-    //setInputValues('');
+    //alert(inputValues.name + ' ' + inputValues.email);
+    setInputValues('');
   };
+
+  console.log(inputValues);
   return (
     <>
       <Row className="mx-0 my-3">
@@ -38,10 +40,11 @@ const FormCom = () => {
             className="form-control mb-2"
             type="text"
             name="name"
+            autoComplete="off"
             placeholder="Enter you Name"
             onChange={InfoFormChange}
             //onKeyPress={keypress}
-            value={inputValues.name}
+            value={inputValues ? inputValues.name : ''}
           />
           <input
             className="form-control mb-2"
@@ -49,15 +52,17 @@ const FormCom = () => {
             name="email"
             placeholder="Enter you Email"
             onChange={InfoFormChange}
-            value={inputValues.email}
+            autoComplete="off"
+            value={inputValues ? inputValues.email : ''}
           />
           <input
             className="form-control mb-2"
             type="text"
             name="password"
+            autoComplete="off"
             placeholder="Enter you Password"
             onChange={InfoFormChange}
-            value={inputValues.password}
+            value={inputValues ? inputValues.password : ''}
           />
           <input
             className="form-control mb-2"
