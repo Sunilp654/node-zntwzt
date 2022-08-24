@@ -5,7 +5,6 @@ import Form from 'react-bootstrap/Form';
 const FormCom = () => {
   //const [message, setMessage] = useState('');
   const [inputValues, setInputValues] = useState({});
-
   const InfoFormChange = (e) => {
     setInputValues((inputValues) => ({
       ...inputValues,
