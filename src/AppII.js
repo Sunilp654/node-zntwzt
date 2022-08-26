@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import { useState } from 'react';
 import './CompII/Style.css';
+// import Todo from './CompII/Todo';
 import NavBar from './CompII/NavBar';
 import Home from './CompII/Home';
 import Products from './CompII/Products';
@@ -19,6 +20,7 @@ const AppII = () => {
 
   return (
     <>
+      {/* <Todo /> */}
       {/* <Accordion>
         {data.map((dataget) => {
           var daysn = dataget.applicableOn.split(',');
@@ -34,7 +36,7 @@ const AppII = () => {
             </>
           );
         })}
-      </Accordion> */} 
+      </Accordion> */}
       <BrowserRouter>
         <NavBar />
         <Routes>
