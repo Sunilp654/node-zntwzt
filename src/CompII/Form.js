@@ -56,7 +56,7 @@ const FormCom = () => {
           />
           <input
             className="form-control mb-2"
-            type="text"
+            type="date"
             name="password"
             autoComplete="off"
             placeholder="Enter you Password"
