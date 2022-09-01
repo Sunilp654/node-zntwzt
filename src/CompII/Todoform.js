@@ -14,7 +14,9 @@ const Todoform = () => {
     });
     setInputdata('');
   };
-
+  const deleteAll = () => {
+    setFindallist([]);
+  };
   return (
     <>
       <div className="m-5">
@@ -28,8 +30,10 @@ const Todoform = () => {
         <button className="addbtn" onClick={additem}>
           Add
         </button>
-        {/* <button className="addbtn">Delete All</button>
-        <button className="addbtn">Delete Selected</button> */}
+        <button className="addbtn" onClick={deleteAll}>
+          Delete All
+        </button>
+        {/*<button className="addbtn">Delete Selected</button> */}
       </div>
 
       <ul className="listStyle">
