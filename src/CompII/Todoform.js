@@ -63,8 +63,8 @@ const Todoform = () => {
           Delete All
         </button>
         {/*<button className="addbtn">Delete Selected</button> */}
-        <br />
-        <h3>
+
+        <h3 style={{ marginTop: '10px' }}>
           After Four Hours = {afterfourHour} : {afterfourMinutes}
         </h3>
       </div>
