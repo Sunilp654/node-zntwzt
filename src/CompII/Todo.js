@@ -15,7 +15,6 @@ const Todo = () => {
           >
             <h3>ToDo List</h3>
             <Todoform />
-            {/* <Todolist /> */}
           </div>
         </div>
       </div>

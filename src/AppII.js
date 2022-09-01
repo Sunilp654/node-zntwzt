@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import { useState } from 'react';
 import './CompII/Style.css';
-// import Todo from './CompII/Todo';
-import NavBar from './CompII/NavBar';
-import Home from './CompII/Home';
-import Products from './CompII/Products';
-import Product from './CompII/Product';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Todo from './CompII/Todo';
+// import NavBar from './CompII/NavBar';
+// import Home from './CompII/Home';
+// import Products from './CompII/Products';
+// import Product from './CompII/Product';
+// import { BrowserRouter, Routes, Route } from 'react-router-dom';
 // import Apidata from './CompII/Apidata';
 // import Daysname from './CompII/Daysname';
 // import Accordion from 'react-bootstrap/Accordion';
@@ -20,7 +20,7 @@ const AppII = () => {
 
   return (
     <>
-      {/* <Todo /> */}
+      <Todo />
       {/* <Accordion>
         {data.map((dataget) => {
           var daysn = dataget.applicableOn.split(',');
@@ -37,16 +37,15 @@ const AppII = () => {
           );
         })}
       </Accordion> */}
-      <div></div>
 
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Products" element={<Products />} />
           <Route path="/Product/:id" element={<Product />} />
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   );
 };
