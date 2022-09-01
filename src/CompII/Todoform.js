@@ -9,14 +9,27 @@ const Todoform = () => {
   };
 
   const additem = () => {
-    if (inputdata == '') {
+    if (inputdata === '') {
       alert('please Enter Task Item');
       nameRef.current.focus();
     } else {
       setFindallist((olditem) => {
         return [...olditem, inputdata];
-      }); 
+      });
       setInputdata('');
+    }
+  };
+  const dataenter = (e) => {
+    if (e.keyCode === 13) {
+      if (inputdata === '') {
+        alert('please Enter Task Item');
+        nameRef.current.focus();
+      } else {
+        setFindallist((olditem) => {
+          return [...olditem, inputdata];
+        });
+        setInputdata('');
+      }
     }
   };
   const deleteAll = () => {
@@ -35,6 +48,7 @@ const Todoform = () => {
           value={inputdata}
           ref={nameRef}
           onChange={itemList}
+          onKeyDown={dataenter}
         />
         <button className="addbtn" onClick={additem}>
           Add
