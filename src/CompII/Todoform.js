@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import TodoList from './TodoList';
 const Todoform = () => {
   const [inputdata, setInputdata] = useState('');
   const [finallist, setFindallist] = useState([]);
@@ -30,13 +31,12 @@ const Todoform = () => {
       </div>
 
       <ul className="listStyle">
-        {finallist.map((item, index) => {
-          return (
-            <li id={index}>
-              <button>X</button> {item}
-            </li>
-          );
+        {finallist.map((item) => {
+          return <TodoList text={item} />;
         })}
+        {/* <li id={index}>
+              <button>X</button> {item}
+            </li> */}
         {/* <li>{inputdata}</li> */}
       </ul>
     </>
