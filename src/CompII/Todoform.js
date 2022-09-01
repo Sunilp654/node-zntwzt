@@ -38,6 +38,12 @@ const Todoform = () => {
   const deleteitem = () => {
     console.log('delete');
   };
+  //const dates = new Date();
+  const date = new Date();
+  const numOfHours = 1;
+  date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
+  const afterfourHour = date.getHours();
+  const afterfourMinutes = date.getMinutes();
   return (
     <>
       <div className="m-5">
@@ -57,6 +63,10 @@ const Todoform = () => {
           Delete All
         </button>
         {/*<button className="addbtn">Delete Selected</button> */}
+        <br />
+        <h3>
+          After Four Hours = {afterfourHour} : {afterfourMinutes}
+        </h3>
       </div>
 
       <ul className="listStyle">
