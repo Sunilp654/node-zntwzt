@@ -1,18 +1,23 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import TodoList from './TodoList';
 const Todoform = () => {
   const [inputdata, setInputdata] = useState('');
   const [finallist, setFindallist] = useState([]);
-
+  const nameRef = useRef();
   const itemList = (e) => {
     setInputdata(e.target.value);
   };
 
   const additem = () => {
-    setFindallist((olditem) => {
-      return [...olditem, inputdata];
-    });
-    setInputdata('');
+    if (inputdata == '') {
+      alert('please Enter Task Item');
+      nameRef.current.focus();
+    } else {
+      setFindallist((olditem) => {
+        return [...olditem, inputdata];
+      });
+      setInputdata('');
+    }
   };
   const deleteAll = () => {
     setFindallist([]);
@@ -28,6 +33,7 @@ const Todoform = () => {
           placeholder="Enter Item..."
           className="taskinput"
           value={inputdata}
+          ref={nameRef}
           onChange={itemList}
         />
         <button className="addbtn" onClick={additem}>
