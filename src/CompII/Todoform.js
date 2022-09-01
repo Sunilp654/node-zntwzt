@@ -15,7 +15,7 @@ const Todoform = () => {
     } else {
       setFindallist((olditem) => {
         return [...olditem, inputdata];
-      });
+      }); 
       setInputdata('');
     }
   };
