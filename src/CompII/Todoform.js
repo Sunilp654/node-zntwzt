@@ -28,6 +28,8 @@ const Todoform = () => {
         <button className="addbtn" onClick={additem}>
           Add
         </button>
+        {/* <button className="addbtn">Delete All</button>
+        <button className="addbtn">Delete Selected</button> */}
       </div>
 
       <ul className="listStyle">
