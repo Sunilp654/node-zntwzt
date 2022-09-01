@@ -27,7 +27,7 @@ const Todoform = () => {
       } else {
         setFindallist((olditem) => {
           return [...olditem, inputdata];
-        }); 
+        });
         setInputdata('');
       }
     }
@@ -47,8 +47,8 @@ const Todoform = () => {
           className="taskinput"
           value={inputdata}
           ref={nameRef}
-          onChange={itemList}
           onKeyDown={dataenter}
+          onChange={itemList}
         />
         <button className="addbtn" onClick={additem}>
           Add
