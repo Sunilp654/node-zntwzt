@@ -42,8 +42,8 @@ const Todoform = () => {
   const date = new Date();
   const numOfHours = 1;
   date.setTime(date.getTime() + numOfHours * 60 * 60 * 1000);
-  const afterfourHour = date.getHours();
-  const afterfourMinutes = date.getMinutes();
+  const afterOneHour = date.getHours();
+  const afterOneMinutes = date.getMinutes();
   return (
     <>
       <div className="m-5">
@@ -65,7 +65,7 @@ const Todoform = () => {
         {/*<button className="addbtn">Delete Selected</button> */}
 
         <h3 style={{ marginTop: '10px' }}>
-          After Four Hours = {afterfourHour} : {afterfourMinutes}
+          After Four Hours = {afterOneHour} : {afterOneMinutes}
         </h3>
       </div>
 
