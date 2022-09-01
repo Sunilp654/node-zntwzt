@@ -17,6 +17,9 @@ const Todoform = () => {
   const deleteAll = () => {
     setFindallist([]);
   };
+  const deleteitem = () => {
+    console.log('delete');
+  };
   return (
     <>
       <div className="m-5">
@@ -37,8 +40,15 @@ const Todoform = () => {
       </div>
 
       <ul className="listStyle">
-        {finallist.map((item) => {
-          return <TodoList text={item} />;
+        {finallist.map((item, index) => {
+          return (
+            <TodoList
+              key={index}
+              id={index}
+              onSelect={deleteitem}
+              text={item}
+            />
+          );
         })}
         {/* <li id={index}>
               <button>X</button> {item}
