@@ -35,8 +35,13 @@ const Todoform = () => {
   const deleteAll = () => {
     setFindallist([]);
   };
-  const deleteitem = () => {
-    console.log('delete');
+  const deleteitem = (id) => {
+    //console.log('delete');
+    setFindallist((olddata) => {
+      return olddata.filter((item, index) => {
+        return index !== id;
+      });
+    });
   };
   //const dates = new Date();
   const date = new Date();
